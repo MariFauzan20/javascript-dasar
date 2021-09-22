@@ -1,18 +1,20 @@
 /// Soal - 01
 /// Kamu diminta untuk membuat sebuah perulangan menggunakan for loop, untuk mencetak angka prima dari 1 ~ 100
 /// EDIT HERE
-let arr = [];
+let isPrime = 0;
+
 for (let i = 2; i <= 100; i++) {
-  if (i !== 4 && i <= 5) {
-    arr.push(i);
-  } else {
-    if (i > 5 && i % 2 !== 0 && i % 3 !== 0 && i % 5 !== 0) {
-      arr[arr.length] = i;
+  for (let j = 1; j <= i; j++) {
+    if (i % j == 0) {
+      isPrime++;
     }
   }
-}
 
-console.log(arr);
+  if (isPrime == 2) {
+    // console.log(i)
+  }
+  isPrime = 0;
+}
 
 /// Soal - 02
 /// Kamu diminta untuk menemukan bilangan prima ke-50, temukan bilangan tersebut menggunakan while loop
@@ -24,15 +26,17 @@ let i = 2;
 let fiftiethNumberOfPrime;
 
 while (primeCounter < fiftiethPrime) {
-  if (i !== 4 && i <= 5) {
-    fiftiethNumberOfPrime = i;
-    primeCounter++;
-  } else {
-    if (i > 5 && i % 2 !== 0 && i % 3 !== 0 && i % 5 !== 0) {
-      fiftiethNumberOfPrime = i;
-      primeCounter++;
+  for (let j = 1; j <= i; j++) {
+    if (i % j == 0) {
+      isPrime++;
     }
   }
+
+  if (isPrime == 2) {
+    fiftiethNumberOfPrime = i;
+    primeCounter++;
+  }
+  isPrime = 0;
   i++;
 }
 
